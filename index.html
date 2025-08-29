@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marina Alcain Ruano - Peluquería Profesional</title>
+    <meta name="description" content="Peluquería profesional de Marina Alcain Ruano. Especialista en cortes, color, peinados y tratamientos capilares.">
+    
+    <!-- TailwindCSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Configuración de TailwindCSS -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'serif': ['Playfair Display', 'serif'],
+                        'sans': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'gold': '#D4AF37',
+                        'rose': '#F7CAC9',
+                        'dark-gold': '#B8860B',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .hero-bg {
+            background: linear-gradient(135deg, rgba(0,0,0,0.7), rgba(0,0,0,0.4)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><pattern id="hair" patternUnits="userSpaceOnUse" width="100" height="100"><path d="M20,20 Q30,10 40,20 Q50,30 60,20 Q70,10 80,20" stroke="%23D4AF37" stroke-width="2" fill="none" opacity="0.1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23hair)"/></svg>');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body class="font-sans bg-white text-gray-900">
+    
+    <!-- Navegación -->
+    <nav class="fixed w-full bg-white/95 backdrop-blur-sm shadow-sm z-50 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0">
+                    <h1 class="text-2xl font-serif font-bold text-gray-900">Marina Alcain</h1>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#inicio" class="nav-link text-gray-700 hover:text-gold transition-colors duration-300">Inicio</a>
+                        <a href="#sobre-mi" class="nav-link text-gray-700 hover:text-gold transition-colors duration-300">Sobre mí</a>
+                        <a href="#servicios" class="nav-link text-gray-700 hover:text-gold transition-colors duration-300">Servicios</a>
+                        <a href="#galeria" class="nav-link text-gray-700 hover:text-gold transition-colors duration-300">Galería</a>
+                        <a href="#testimonios" class="nav-link text-gray-700 hover:text-gold transition-colors duration-300">Testimonios</a>
+                        <a href="#contacto" class="nav-link text-gray-700 hover:text-gold transition-colors duration-300">Contacto</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-gray-700 hover:text-gold focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Menú móvil -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#inicio" class="block px-3 py-2 text-gray-700 hover:text-gold">Inicio</a>
+                <a href="#sobre-mi" class="block px-3 py-2 text-gray-700 hover:text-gold">Sobre mí</a>
+                <a href="#servicios" class="block px-3 py-2 text-gray-700 hover:text-gold">Servicios</a>
+                <a href="#galeria" class="block px-3 py-2 text-gray-700 hover:text-gold">Galería</a>
+                <a href="#testimonios" class="block px-3 py-2 text-gray-700 hover:text-gold">Testimonios</a>
+                <a href="#contacto" class="block px-3 py-2 text-gray-700 hover:text-gold">Contacto</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sección Inicio -->
+    <section id="inicio" class="hero-bg min-h-screen flex items-center justify-center text-white">
+        <div class="text-center max-w-4xl mx-auto px-4">
+            <div class="fade-in">
+                <h1 class="text-5xl md:text-7xl font-serif font-bold mb-6">
+                    Marina Alcain Ruano
+                </h1>
+                <p class="text-xl md:text-2xl mb-8 text-gray-200">
+                    Peluquería Profesional
+                </p>
+                <p class="text-lg md:text-xl mb-12 max-w-2xl mx-auto leading-relaxed">
+                    Transformo tu cabello en una obra de arte. Especialista en cortes modernos, 
+                    coloración profesional y tratamientos capilares de alta calidad.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#servicios" class="bg-gold hover:bg-dark-gold text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105">
+                        Ver Servicios
+                    </a>
+                    <a href="#contacto" class="border-2 border-white text-white hover:bg-white hover:text-gray-900 px-8 py-3 rounded-full font-semibold transition-all duration-300">
+                        Contactar
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Sobre mí -->
+    <section id="sobre-mi" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-serif font-bold text-gray-900 mb-6 fade-in">
+                    Sobre mí
+                </h2>
+                <div class="w-24 h-1 bg-gold mx-auto mb-8"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="fade-in">
+                    <div class="bg-white rounded-2xl shadow-lg p-8">
+                        <h3 class="text-2xl font-serif font-semibold mb-6 text-gray-900">
+                            Mi Historia
+                        </h3>
+                        <p class="text-gray-700 leading-relaxed mb-6">
+                            Con más de 8 años de experiencia en el mundo de la peluquería, 
+                            Marina Alcain Ruano se ha especializado en crear looks únicos y 
+                            personalizados para cada cliente.
+                        </p>
+                        <p class="text-gray-700 leading-relaxed mb-6">
+                            Mi pasión por la belleza y la creatividad me llevó a formarme 
+                            en las mejores academias de peluquería, donde aprendí las técnicas 
+                            más avanzadas en corte, color y tratamientos capilares.
+                        </p>
+                        <p class="text-gray-700 leading-relaxed">
+                            Cada cliente es único, y por eso me enfoco en entender sus 
+                            necesidades y crear un estilo que refleje su personalidad.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="fade-in">
+                    <div class="bg-gradient-to-br from-gold to-dark-gold rounded-2xl p-8 text-white">
+                        <h3 class="text-2xl font-serif font-semibold mb-6">
+                            Mi Especialidad
+                        </h3>
+                        <ul class="space-y-4">
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle mr-3 text-xl"></i>
+                                <span>Cortes modernos y clásicos</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle mr-3 text-xl"></i>
+                                <span>Coloración profesional</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle mr-3 text-xl"></i>
+                                <span>Peinados para eventos</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle mr-3 text-xl"></i>
+                                <span>Tratamientos capilares</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle mr-3 text-xl"></i>
+                                <span>Asesoramiento personalizado</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Servicios -->
+    <section id="servicios" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-serif font-bold text-gray-900 mb-6 fade-in">
+                    Servicios
+                </h2>
+                <div class="w-24 h-1 bg-gold mx-auto mb-8"></div>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto fade-in">
+                    Ofrezco una amplia gama de servicios profesionales para cuidar y embellecer tu cabello
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Servicio 1 -->
+                <div class="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 fade-in">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-gold rounded-full flex items-center justify-center mx-auto mb-6">
+                            <i class="fas fa-cut text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-serif font-semibold mb-4">Cortes</h3>
+                        <p class="text-gray-600 mb-6">
+                            Cortes modernos y clásicos adaptados a tu tipo de cabello y estilo de vida.
+                        </p>
+                        <ul class="text-sm text-gray-500 space-y-2">
+                            <li>• Corte clásico</li>
+                            <li>• Corte moderno</li>
+                            <li>• Corte degradado</li>
+                            <li>• Corte asimétrico</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Servicio 2 -->
+                <div class="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 fade-in">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-gold rounded-full flex items-center justify-center mx-auto mb-6">
+                            <i class="fas fa-palette text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-serif font-semibold mb-4">Coloración</h3>
+                        <p class="text-gray-600 mb-6">
+                            Técnicas de coloración profesional para lograr el tono perfecto.
+                        </p>
+                        <ul class="text-sm text-gray-500 space-y-2">
+                            <li>• Tinte completo</li>
+                            <li>• Mechas</li>
+                            <li>• Balayage</li>
+                            <li>• Color fantasía</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Servicio 3 -->
+                <div class="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 fade-in">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-gold rounded-full flex items-center justify-center mx-auto mb-6">
+                            <i class="fas fa-magic text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-serif font-semibold mb-4">Peinados</h3>
+                        <p class="text-gray-600 mb-6">
+                            Peinados elegantes para ocasiones especiales y eventos.
+                        </p>
+                        <ul class="text-sm text-gray-500 space-y-2">
+                            <li>• Peinados de novia</li>
+                            <li>• Peinados de fiesta</li>
+                            <li>• Recogidos</li>
+                            <li>• Ondas y rizos</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Servicio 4 -->
+                <div class="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 fade-in">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-gold rounded-full flex items-center justify-center mx-auto mb-6">
+                            <i class="fas fa-spa text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-serif font-semibold mb-4">Tratamientos</h3>
+                        <p class="text-gray-600 mb-6">
+                            Tratamientos capilares para restaurar y nutrir tu cabello.
+                        </p>
+                        <ul class="text-sm text-gray-500 space-y-2">
+                            <li>• Hidratación profunda</li>
+                            <li>• Keratina</li>
+                            <li>• Alisado brasileño</li>
+                            <li>• Tratamiento reparador</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Servicio 5 -->
+                <div class="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 fade-in">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-gold rounded-full flex items-center justify-center mx-auto mb-6">
+                            <i class="fas fa-user-friends text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-serif font-semibold mb-4">Consultoría</h3>
+                        <p class="text-gray-600 mb-6">
+                            Asesoramiento personalizado para encontrar tu estilo ideal.
+                        </p>
+                        <ul class="text-sm text-gray-500 space-y-2">
+                            <li>• Análisis facial</li>
+                            <li>• Recomendaciones de estilo</li>
+                            <li>• Cuidado del cabello</li>
+                            <li>• Rutina personalizada</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Servicio 6 -->
+                <div class="bg-white rounded-2xl shadow-lg p-8 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 fade-in">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-gold rounded-full flex items-center justify-center mx-auto mb-6">
+                            <i class="fas fa-calendar-alt text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-serif font-semibold mb-4">Eventos</h3>
+                        <p class="text-gray-600 mb-6">
+                            Servicios especiales para bodas, graduaciones y eventos importantes.
+                        </p>
+                        <ul class="text-sm text-gray-500 space-y-2">
+                            <li>• Peinados de novia</li>
+                            <li>• Servicio a domicilio</li>
+                            <li>• Pruebas previas</li>
+                            <li>• Acompañamiento</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Galería -->
+    <section id="galeria" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-serif font-bold text-gray-900 mb-6 fade-in">
+                    Galería de Trabajos
+                </h2>
+                <div class="w-24 h-1 bg-gold mx-auto mb-8"></div>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto fade-in">
+                    Algunos de mis trabajos más recientes y destacados
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Imagen 1 -->
+                <div class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 fade-in">
+                    <div class="aspect-square bg-gradient-to-br from-rose to-gold flex items-center justify-center">
+                        <div class="text-center text-white p-8">
+                            <i class="fas fa-image text-6xl mb-4 opacity-50"></i>
+                            <p class="text-lg font-semibold">Corte Moderno</p>
+                            <p class="text-sm opacity-75">Degradado con mechas</p>
+                        </div>
+                    </div>
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
+                        <i class="fas fa-search-plus text-white text-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></i>
+                    </div>
+                </div>
+                
+                <!-- Imagen 2 -->
+                <div class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 fade-in">
+                    <div class="aspect-square bg-gradient-to-br from-gold to-dark-gold flex items-center justify-center">
+                        <div class="text-center text-white p-8">
+                            <i class="fas fa-image text-6xl mb-4 opacity-50"></i>
+                            <p class="text-lg font-semibold">Coloración Balayage</p>
+                            <p class="text-sm opacity-75">Técnica profesional</p>
+                        </div>
+                    </div>
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
+                        <i class="fas fa-search-plus text-white text-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></i>
+                    </div>
+                </div>
+                
+                <!-- Imagen 3 -->
+                <div class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 fade-in">
+                    <div class="aspect-square bg-gradient-to-br from-rose to-gold flex items-center justify-center">
+                        <div class="text-center text-white p-8">
+                            <i class="fas fa-image text-6xl mb-4 opacity-50"></i>
+                            <p class="text-lg font-semibold">Peinado de Novia</p>
+                            <p class="text-sm opacity-75">Elegante y sofisticado</p>
+                        </div>
+                    </div>
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
+                        <i class="fas fa-search-plus text-white text-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></i>
+                    </div>
+                </div>
+                
+                <!-- Imagen 4 -->
+                <div class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 fade-in">
+                    <div class="aspect-square bg-gradient-to-br from-gold to-dark-gold flex items-center justify-center">
+                        <div class="text-center text-white p-8">
+                            <i class="fas fa-image text-6xl mb-4 opacity-50"></i>
+                            <p class="text-lg font-semibold">Corte Asimétrico</p>
+                            <p class="text-sm opacity-75">Estilo vanguardista</p>
+                        </div>
+                    </div>
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
+                        <i class="fas fa-search-plus text-white text-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></i>
+                    </div>
+                </div>
+                
+                <!-- Imagen 5 -->
+                <div class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 fade-in">
+                    <div class="aspect-square bg-gradient-to-br from-rose to-gold flex items-center justify-center">
+                        <div class="text-center text-white p-8">
+                            <i class="fas fa-image text-6xl mb-4 opacity-50"></i>
+                            <p class="text-lg font-semibold">Tratamiento Keratina</p>
+                            <p class="text-sm opacity-75">Cabello sedoso</p>
+                        </div>
+                    </div>
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
+                        <i class="fas fa-search-plus text-white text-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></i>
+                    </div>
+                </div>
+                
+                <!-- Imagen 6 -->
+                <div class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 fade-in">
+                    <div class="aspect-square bg-gradient-to-br from-gold to-dark-gold flex items-center justify-center">
+                        <div class="text-center text-white p-8">
+                            <i class="fas fa-image text-6xl mb-4 opacity-50"></i>
+                            <p class="text-lg font-semibold">Recogido Elegante</p>
+                            <p class="text-sm opacity-75">Para ocasiones especiales</p>
+                        </div>
+                    </div>
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center">
+                        <i class="fas fa-search-plus text-white text-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Testimonios -->
+    <section id="testimonios" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-serif font-bold text-gray-900 mb-6 fade-in">
+                    Testimonios
+                </h2>
+                <div class="w-24 h-1 bg-gold mx-auto mb-8"></div>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto fade-in">
+                    Lo que dicen mis clientes sobre mi trabajo
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonio 1 -->
+                <div class="bg-gray-50 rounded-2xl p-8 hover:shadow-lg transition-all duration-300 fade-in">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-gold rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-user text-white"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-900">Ana García</h4>
+                            <div class="flex text-gold">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic">
+                        "Marina es una profesional excepcional. Su atención al detalle y su creatividad 
+                        me han ayudado a encontrar el estilo perfecto. ¡Recomiendo sus servicios al 100%!"
+                    </p>
+                </div>
+                
+                <!-- Testimonio 2 -->
+                <div class="bg-gray-50 rounded-2xl p-8 hover:shadow-lg transition-all duration-300 fade-in">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-gold rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-user text-white"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-900">Carmen López</h4>
+                            <div class="flex text-gold">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic">
+                        "El peinado que me hizo para mi boda fue perfecto. Marina entendió exactamente 
+                        lo que quería y superó mis expectativas. ¡Una artista!"
+                    </p>
+                </div>
+                
+                <!-- Testimonio 3 -->
+                <div class="bg-gray-50 rounded-2xl p-8 hover:shadow-lg transition-all duration-300 fade-in">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-gold rounded-full flex items-center justify-center mr-4">
+                            <i class="fas fa-user text-white"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-900">Laura Martínez</h4>
+                            <div class="flex text-gold">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic">
+                        "Después de años probando diferentes peluquerías, encontré en Marina a la 
+                        profesional que buscaba. Su trato personal y su talento son únicos."
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Contacto -->
+    <section id="contacto" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-serif font-bold text-gray-900 mb-6 fade-in">
+                    Contacto
+                </h2>
+                <div class="w-24 h-1 bg-gold mx-auto mb-8"></div>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto fade-in">
+                    ¿Lista para transformar tu look? ¡Ponte en contacto conmigo!
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- Formulario de contacto -->
+                <div class="bg-white rounded-2xl shadow-lg p-8 fade-in">
+                    <h3 class="text-2xl font-serif font-semibold mb-6 text-gray-900">
+                        Envíame un mensaje
+                    </h3>
+                    <form id="contact-form" class="space-y-6">
+                        <div>
+                            <label for="nombre" class="block text-sm font-medium text-gray-700 mb-2">
+                                Nombre completo
+                            </label>
+                            <input type="text" id="nombre" name="nombre" required
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold focus:border-transparent transition-all duration-300">
+                        </div>
+                        
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-2">
+                                Email
+                            </label>
+                            <input type="email" id="email" name="email" required
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold focus:border-transparent transition-all duration-300">
+                        </div>
+                        
+                        <div>
+                            <label for="telefono" class="block text-sm font-medium text-gray-700 mb-2">
+                                Teléfono (opcional)
+                            </label>
+                            <input type="tel" id="telefono" name="telefono"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold focus:border-transparent transition-all duration-300">
+                        </div>
+                        
+                        <div>
+                            <label for="mensaje" class="block text-sm font-medium text-gray-700 mb-2">
+                                Mensaje
+                            </label>
+                            <textarea id="mensaje" name="mensaje" rows="5" required
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold focus:border-transparent transition-all duration-300"
+                                placeholder="Cuéntame qué servicio necesitas o cualquier consulta que tengas..."></textarea>
+                        </div>
+                        
+                        <button type="submit" 
+                            class="w-full bg-gold hover:bg-dark-gold text-white py-3 px-6 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
+                            Enviar mensaje
+                        </button>
+                    </form>
+                </div>
+                
+                <!-- Información de contacto -->
+                <div class="space-y-8 fade-in">
+                    <div class="bg-white rounded-2xl shadow-lg p-8">
+                        <h3 class="text-2xl font-serif font-semibold mb-6 text-gray-900">
+                            Información de contacto
+                        </h3>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-center">
+                                <div class="w-12 h-12 bg-gold rounded-full flex items-center justify-center mr-4">
+                                    <i class="fas fa-map-marker-alt text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900">Ubicación</h4>
+                                    <p class="text-gray-600">Calle Principal 123<br>Ciudad, CP 12345</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center">
+                                <div class="w-12 h-12 bg-gold rounded-full flex items-center justify-center mr-4">
+                                    <i class="fas fa-phone text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900">Teléfono</h4>
+                                    <p class="text-gray-600">+34 123 456 789</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center">
+                                <div class="w-12 h-12 bg-gold rounded-full flex items-center justify-center mr-4">
+                                    <i class="fas fa-envelope text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900">Email</h4>
+                                    <p class="text-gray-600">marina@peluqueria.com</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center">
+                                <div class="w-12 h-12 bg-gold rounded-full flex items-center mr-4">
+                                    <i class="fas fa-clock text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900">Horarios</h4>
+                                    <p class="text-gray-600">
+                                        Lunes - Viernes: 9:00 - 19:00<br>
+                                        Sábados: 9:00 - 15:00<br>
+                                        Domingos: Cerrado
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Enlaces a redes sociales -->
+                    <div class="bg-gradient-to-br from-gold to-dark-gold rounded-2xl p-8 text-white">
+                        <h3 class="text-2xl font-serif font-semibold mb-6">
+                            Sígueme en redes sociales
+                        </h3>
+                        <div class="flex space-x-4">
+                            <a href="https://wa.me/34123456789" target="_blank" 
+                                class="w-12 h-12 bg-white bg-opacity-20 rounded-full flex items-center justify-center hover:bg-opacity-30 transition-all duration-300 transform hover:scale-110">
+                                <i class="fab fa-whatsapp text-xl"></i>
+                            </a>
+                            <a href="https://instagram.com/marina_alcain" target="_blank" 
+                                class="w-12 h-12 bg-white bg-opacity-20 rounded-full flex items-center justify-center hover:bg-opacity-30 transition-all duration-300 transform hover:scale-110">
+                                <i class="fab fa-instagram text-xl"></i>
+                            </a>
+                            <a href="https://facebook.com/marina.alcain" target="_blank" 
+                                class="w-12 h-12 bg-white bg-opacity-20 rounded-full flex items-center justify-center hover:bg-opacity-30 transition-all duration-300 transform hover:scale-110">
+                                <i class="fab fa-facebook text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h3 class="text-2xl font-serif font-bold mb-4">Marina Alcain Ruano</h3>
+                <p class="text-gray-400 mb-6">Peluquería Profesional</p>
+                <div class="flex justify-center space-x-6 mb-8">
+                    <a href="https://wa.me/34123456789" target="_blank" class="text-gray-400 hover:text-gold transition-colors duration-300">
+                        <i class="fab fa-whatsapp text-xl"></i>
+                    </a>
+                    <a href="https://instagram.com/marina_alcain" target="_blank" class="text-gray-400 hover:text-gold transition-colors duration-300">
+                        <i class="fab fa-instagram text-xl"></i>
+                    </a>
+                    <a href="https://facebook.com/marina.alcain" target="_blank" class="text-gray-400 hover:text-gold transition-colors duration-300">
+                        <i class="fab fa-facebook text-xl"></i>
+                    </a>
+                </div>
+                <div class="border-t border-gray-800 pt-8">
+                    <p class="text-gray-400 text-sm">
+                        © 2024 Marina Alcain Ruano. Todos los derechos reservados.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

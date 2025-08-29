@@ -1,0 +1,43 @@
+# Configuración para GitHub Pages
+title: "Marina Alcain Ruano - Peluquería Profesional"
+description: "Portafolio profesional de Marina Alcain Ruano. Especialista en cortes, color, peinados y tratamientos capilares."
+author: "Marina Alcain Ruano"
+email: "marina@peluqueria.com"
+url: "https://tu-usuario.github.io"
+baseurl: "/marina-peluqueria"
+
+# Configuración de GitHub Pages
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+
+# Configuración de SEO
+lang: es
+locale: es_ES
+
+# Configuración de redes sociales
+social:
+  instagram: "marina_alcain"
+  whatsapp: "34123456789"
+  facebook: "marina.alcain"
+
+# Configuración de servicios
+services:
+  - name: "Cortes"
+    description: "Cortes modernos y clásicos"
+  - name: "Coloración"
+    description: "Técnicas de coloración profesional"
+  - name: "Peinados"
+    description: "Peinados para ocasiones especiales"
+  - name: "Tratamientos"
+    description: "Tratamientos capilares de alta calidad"
+
+# Configuración de horarios
+schedule:
+  monday: "9:00 - 19:00"
+  tuesday: "9:00 - 19:00"
+  wednesday: "9:00 - 19:00"
+  thursday: "9:00 - 19:00"
+  friday: "9:00 - 19:00"
+  saturday: "9:00 - 15:00"
+  sunday: "Cerrado"
